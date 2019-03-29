@@ -1,28 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {lazy} from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import Header from './Header';
+import withSuspense from './withSuspense';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const Aboutme = lazy(() => import('./Aboutme'));
+const Doing = lazy(() => import('./Doing'));
+const Contact = lazy(() => import('./Contact'));
+
+const contentContainerStyle = {
+  textAlign: 'center',
+  paddingTop: '15px',
+  display: 'flex',
+  justifyContent: 'center',
+};
+
+function App() {
+  return (
+    <BrowserRouter>
+      <>
+        <Header/>
+        <div style={contentContainerStyle}>
+          <div style={{ width: '400px' }}>
+            <Switch>
+              <Route exact path='/aboutme' component={withSuspense(Aboutme)}/>
+              <Route exact path='/doing' component={withSuspense(Doing)}/>
+              <Route exact path='/contact' component={withSuspense(Contact)}/>
+            </Switch>
+          </div>
+        </div>
+      </>
+    </BrowserRouter>
+  )
 }
 
 export default App;
