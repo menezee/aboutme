@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{200:function(e,t,a){"use strict";a.r(t);var n=a(91),c=a(1),i=a.n(c),r=a(202),s=a(169);t.default=function(){var e=Object(c.useState)(!0),t=Object(n.a)(e,2),a=t[0],o=t[1];return Object(c.useEffect)(function(){setTimeout(function(){o(!1)},1500)},[]),i.a.createElement(i.a.Fragment,null,i.a.createElement(r.a.Paragraph,{copyable:{text:"erich.menezes1@gmail.com"}},"email address"),i.a.createElement(s.a,{style:{fontSize:"25px"},type:"linkedin",spin:a}))}}}]);
+//# sourceMappingURL=7.f811481e.chunk.js.map
